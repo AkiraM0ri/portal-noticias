@@ -48,7 +48,7 @@ function createNews() {
         </div>
         <div class="infos-container__author">
           <div class="card-news__author-img-container">
-            <img class="card-news__author-img" src="/imgs/trali.jpeg" alt="imagem do autor">
+            <img class="card-news__author-img" src="imgs/trali.jpeg" alt="imagem do autor">
           </div>
           <div class="card-news__author-name-container">
             <p class="card-news__author-name">César Tralli</p>

@@ -17,6 +17,10 @@ header .menu-hamburger {
   header .menu {
     display: none;
   }
+
+  .weekly-news__cards-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  }
   
   footer .container {
     flex-direction: column;
