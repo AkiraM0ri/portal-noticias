@@ -1,6 +1,6 @@
 /* menu hamburguer */
 header .menu-hamburger {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 3rem;
   gap: 0.5rem;
@@ -16,6 +16,10 @@ header .menu-hamburger {
 @media (max-width: 600px) {
   header .menu {
     display: none;
+  }
+
+  header .menu-hamburger {
+    display: flex;
   }
 
   .weekly-news__cards-wrapper {
