@@ -402,7 +402,7 @@ main .main-content__box .main-content__title span{
 
 .card-infinite .card-infinite__img-container {
   width: 100%;
-  min-height: 19.6rem;
+  min-height: 12rem;
   height: auto;
 }
 .card-infinite .card-infinite__img-container img {
