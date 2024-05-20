@@ -15,7 +15,6 @@ exports.userData = async (req, res) => {
 // realiza o login de usuario
 exports.login = async (req, res) => {
   const { email, password } = req.body
-  console.log("🚀 ~ exports.login= ~ req.body:", req.body)
 
   if( !email || !password) return res.status(422).json({ erro: "ausencia de campos" })
   
@@ -46,7 +45,7 @@ exports.login = async (req, res) => {
 // regista um user novo
 exports.register = async (req, res) => {
   const { name, email, password, confirmpass } = req.body
-  console.log("🚀 ~ exports.register= ~ req.body:", req.body)
+  const { api_mode } = req.headers
 
   if(!name || !email || !password || !confirmpass) return res.status(422).json({ erro: "ausencia de campos" })
   
