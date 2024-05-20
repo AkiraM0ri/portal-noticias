@@ -40,7 +40,7 @@ function createNews() {
     container.innerHTML += `
     <div class="card-infinite">
       <div class="card-infinite__img-container">
-        <img src="imgs/infinite-scroll.jpg" alt="">
+        <img src="./assets/imgs/infinite-scroll.jpg" alt="">
       </div>
       <div class="card-infinite__infos-container">
         <div class="infos-container__title">
@@ -48,7 +48,7 @@ function createNews() {
         </div>
         <div class="infos-container__author">
           <div class="card-news__author-img-container">
-            <img class="card-news__author-img" src="imgs/trali.jpeg" alt="imagem do autor">
+            <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
           </div>
           <div class="card-news__author-name-container">
             <p class="card-news__author-name">César Tralli</p>
