@@ -3,5 +3,6 @@ exports.home = async (req, res) => {
 }
 
 exports.registerUser = async (req, res) => {
+  console.log('testeee')
   res.render('register');
 }

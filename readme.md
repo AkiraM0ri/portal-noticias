@@ -60,46 +60,11 @@ Inicie o servidor
 
 Rendeniza a página home.
 
-#### Cadastro de um usuario novo
-
-```http
-  POST /auth/register
-```
-
-| Parâmetro   | Tipo       | Descrição                           |
-| :---------- | :--------- | :---------------------------------- |
-| `name` | `string` | **Obrigatório**. Nome do usuario |
-| `email` | `string` | **Obrigatório**. Email do usuario |
-| `password` | `string` | **Obrigatório**. Senha do usuario |
-| `confirmpass` | `string` | **Obrigatório**. Confirmação da senha |
-
-Retorna uma mensagem de sucesso.
-
-#### Login de um usuario
-
-```http
-  POST /auth/login
-```
-
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `email` | `string` | **Obrigatório**. Email do usuario |
-| `password` | `string` | **Obrigatório**. Senha do usuario |
-
-Realiza o login e retorna o token e uma mensagem de sucesso.
-
-#### Verifica os dados de um usuario pelo ID
-
-```http
-  GET /user/:id
-```
-
-Retorna os dados daquele usuario caso exista.
-
-
 
 
 ## Proximas atualizações
+
+- menu mobile
 
 - Adicionar uma forma de usar a aplicação via API ou rendenizando a pagina
 

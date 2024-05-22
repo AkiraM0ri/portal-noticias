@@ -3,5 +3,110 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 80vh;
+  height: 95vh;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+form{
+  background-color: #fff;
+  width: 100%;
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.form-wrapper .alert {
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+.form-wrapper [alert-type="erro"] {
+  background-color: rgb(242, 222, 222);
+  color: rgb(185, 74, 72);
+  border: 1px solid rgb(238, 211, 215);
+}
+
+.form-wrapper [alert-type="success"] {
+  background-color: #DDF3D5;
+  color: #597151;
+  border: 1px solid #9ddc86;
+}
+
+form h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+form > .forms__itens,
+form > .forms__itens > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form > .forms__itens > div {
+  gap: .5rem;
+}
+form > .forms__itens > div label {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+form > .forms__itens {
+  gap: 2rem;
+}
+form > .forms__itens .form__input {
+  transition: border-color 0.2s;
+  border: 0;
+  border-bottom: 1px solid #9b9b9b;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+}
+
+form > .forms__itens .form__input::placeholder{
+  color: #CBD1DC;
+}
+
+form > .forms__itens .form__input:focus {
+  outline: none;
+  border-bottom: 1px solid #275EFE;
+}
+
+form > .forms__itens .btn {
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  height: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    #6253e1,
+    #852d91,
+    #a3a1ff,
+    #f24645
+  );
+}
+
+form > .forms__itens .btn:hover{
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }

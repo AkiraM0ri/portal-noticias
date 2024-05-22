@@ -80,8 +80,28 @@ header .container {
 .menu .menu__item {
   text-decoration: none;
   transition: 300ms;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--menu-item-color);
+  transition: 300ms;
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      transparent
+    ),
+    linear-gradient(
+      to right,
+      rgb(255, 145, 145),
+      rgb(255, 137, 220),
+      rgb(163, 209, 255)
+  );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.menu .menu__item:hover {
+  background-size: 0 3px, 100% 3px;
 }
 
 header .container .user {

@@ -45,17 +45,16 @@ exports.login = async (req, res) => {
 // regista um user novo
 exports.register = async (req, res) => {
   const { name, email, password, confirmpass } = req.body
-  const { api_mode } = req.headers
 
-  if(!name || !email || !password || !confirmpass) return res.status(422).json({ erro: "ausencia de campos" })
+  if(!name || !email || !password || !confirmpass) return res.render('register', { msg: "Ausencia de campos", alert: "erro" })
   
   // verifica se as senhas sao igual
-  if(password !== confirmpass) return res.status(404).json({ erro: "as senhas sao diferentes" })
+  if(password !== confirmpass) return res.render('register', { msg: "As senhas estão diferentes", alert: "erro" })
 
   // verifica se existe o usuario
   const verifyUserExists = await userExists({ email })
 
-  if(verifyUserExists.exists) return res.status(409).json({ erro: "usuario ja existe" })
+  if(verifyUserExists.exists) return res.render('register', { msg: "Usuario já existe, tente outro email", alert: "erro" })
 
   // criptografa a senha do user, e salva os dados no mongo
   const salt = await bcrypt.genSalt(12)
@@ -69,10 +68,10 @@ exports.register = async (req, res) => {
 
   try {
     await registerUser.save() 
-
-    res.status(201).json({msg: 'Usuario criado com sucesso!'})
+    
+    return res.render('register', {msg: 'Usuario cadastrado!!', alert: "success"});
   } catch (error) {
-    res.status(500).json({msg: 'Algo deu errado'})
+    res.render('register', {msg: 'Algo deu errado', alert: "erro"});
   }
 }
 
