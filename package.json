@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
     "dotenv-extended": "^2.9.0",
     "express": "^4.19.2",
     "hbs": "^4.2.0",

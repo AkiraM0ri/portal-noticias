@@ -11,9 +11,15 @@
         <a href="#" class="menu__item">Notícias</a>
         <a href="#" class="menu__item">Newsletter</a>
       </nav>
+
       <div class="user">
-        <a href="/register"><span class="material-symbols-outlined user__item user-account">account_circle</span></a>
-        <span class="material-symbols-outlined user__item">search</span>
+        {{#if isAuthenticated}}
+        <a class="user__btn user__logged__btn" href="/profile">Meu Perfil</a>
+        <a class="user__btn user__logged__btn" href="/logout">Sair</a>
+        {{else}}
+        <a class="user__btn user__non-logged__btn" href="/register">Cadastrar</a>
+        <a class="user__btn user__non-logged__btn" href="/login">Logar</a>
+        {{/if}}
       </div>
     </div>
   </header>

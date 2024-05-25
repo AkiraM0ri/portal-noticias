@@ -1,8 +1,17 @@
 exports.home = async (req, res) => {
-  res.render('home');
-}
+  const token = req.cookies.token 
+  let isAuthenticated = false;
 
-exports.registerUser = async (req, res) => {
-  console.log('testeee')
-  res.render('register');
+  if (token) {
+    try {
+      const secret = process.env.secret
+
+      jwt.verify(token, secret);
+      isAuthenticated = true;
+    } catch (err) {
+      isAuthenticated = false;
+    }
+  }
+
+  res.render('home', { isAuthenticated });
 }

@@ -66,9 +66,7 @@ Rendeniza a página home.
 
 - menu mobile
 
-- Adicionar uma forma de usar a aplicação via API ou rendenizando a pagina
-
-- Adicionar tela de cadastro de usuario e design
+- Adicionar tela de perfil do user design
 
 - Feed e cadastro de noticias  
 

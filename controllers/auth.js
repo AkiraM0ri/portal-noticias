@@ -1,32 +1,20 @@
 const User = require("../models/User.js")
 
-exports.userData = async (req, res) => {
-  const userId = req.params.id
-
-  // verifica se o usuario existe 
-  const verifyUserExists = await userExists({ userId }, '-password')
-  if(!verifyUserExists.exists) return res.status(404).json({ erro: "usuario nao encontrado" })
-
-  const userData = verifyUserExists.data 
-  
-  res.status(200).json(userData)
-}
-
 // realiza o login de usuario
 exports.login = async (req, res) => {
   const { email, password } = req.body
 
-  if( !email || !password) return res.status(422).json({ erro: "ausencia de campos" })
+  if( !email || !password) return res.render('login', { msg: "Ausencia de campos", alert: "erro" })
   
   // verifica se o usuario existe 
   const verifyUserExists = await userExists({ email })
-  if(!verifyUserExists.exists) return res.status(400).json({ erro: "senha ou email invalido" })
+  if(!verifyUserExists.exists) return res.render('login', { msg: "Cadastre-se", alert: "erro" })
     
   const userData = verifyUserExists.data.user
 
   // verifica se as senhas batem
   const checkPass = await bcrypt.compare(password, userData.password)
-  if(!checkPass) return res.status(400).json({ erro: "senha ou email invalido" })
+  if(!checkPass) return res.render('login', { msg: "Senha ou email invalido", alert: "erro" })
   
   try {
     // token jwt + secret
@@ -36,13 +24,16 @@ exports.login = async (req, res) => {
       id: userData.id
     }, secret)
 
-    res.status(201).json({msg: 'Login realizado com sucesso', token: token})
+    res.cookie('token', token, { httpOnly: true });
+    res.cookie('authenticated', true, { httpOnly: true });
+    
+    res.redirect('/')
   } catch (error) {
-    res.status(500).json({msg: 'Algo deu errado, por favor tente mais tarde'})
+    res.render('login', {msg: 'Algo deu errado, por favor tente mais tarde', alert: "erro" })
   }
 }
 
-// regista um user novo
+// cadastra um user novo
 exports.register = async (req, res) => {
   const { name, email, password, confirmpass } = req.body
 
@@ -76,11 +67,12 @@ exports.register = async (req, res) => {
 }
 
 // verifica se o usuario existe pelo email
-async function userExists (findWhere, exclude = false) {
+async function userExists (findWhere, exclude) {
   const data = {}
 
-  if(exclude) data.user = await User.findOne(findWhere, exclude) 
-  else data.user = await User.findOne(findWhere)   
+  try {
+    data.user = await User.findOne(findWhere, exclude) 
+  } catch (error) {}
 
   if(data.user) {
     return {
