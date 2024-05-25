@@ -1,0 +1,25 @@
+<div class="form-wrapper">
+    <form action="/auth/login" method="post">
+      {{#if msg}}
+        <div class="alert" alert-type="{{alert}}">
+          <h2>{{msg}}</h2>
+        </div>
+      {{/if}}
+      
+      <h2>Entre na sua conta</h2>
+      <div class="forms__itens">
+        <div>
+          <label for="email">Email</label>
+          <input class="form__input" type="email" name="email" id="email" value="" placeholder="Digite seu email">
+        </div>
+
+        <div>
+          <label for="password">Senha</label>
+          <input class="form__input" type="password" name="password" id="password" value="" placeholder="Digite sua senha">
+        </div>
+
+        <input type="submit" value="Entrar" class="btn">
+      </div>
+      </div>
+    </form>
+  </div>
