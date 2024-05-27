@@ -1,0 +1,16 @@
+<div class="card-container">
+    <div class="profile-card">
+        <div class="profile-image">
+            <img id="profile-pic" src="./assets/imgs/default-avatar.jpg" alt="Foto do Usuário">
+        </div>
+        <div class="profile-info">
+            {{log user}}
+            <h1 id="user-name">{{user.name}}</h1>
+            {{#if user.reporter}}
+            <a href="/newsPage" class="edit-profile-link post-news">Publicar noticia</a>
+            {{else}}
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSclcVb1EGmrSP2WT8qAYYXtzMgkUamx8-GH4a-_alFPHu-uew/viewform" target="_blank" class="edit-profile-link">Tornar-se publicador(a)</a>
+            {{/if}}
+        </div>
+    </div>
+</div>

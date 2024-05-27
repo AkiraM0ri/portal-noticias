@@ -1,6 +1,6 @@
 /* conteudo principal */
 main {
-  background-image: url('https://observatoriog.com.br/wordpress/wp-content/uploads/2021/07/lil-nas-x-youtube-industry-baby.jpg');
+  background-color: #ccc;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,6 +30,7 @@ main .main-content__box .main-content__title span{
   background-color: #fff;
   padding: 1rem;
   box-sizing: border-box;
+  max-width: 49rem;
 }
 
 .news-tags {
@@ -123,6 +124,9 @@ main .main-content__box .main-content__title span{
   overflow: hidden;
   aspect-ratio: 1;
   width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .weekly-news__cards-wrapper .card-container .card__infos .news-tags span{
@@ -149,8 +153,7 @@ main .main-content__box .main-content__title span{
 }
 
 .weekly-news__cards-wrapper .card-container img {
-  width: calc(100% + 12rem);
-  height: auto;
+  height: 100%;
 }
 
 .card__infos .card__infos__author {
@@ -261,7 +264,8 @@ main .main-content__box .main-content__title span{
 
 .secondary-news__card-container .card-container__infos p {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: 2px 2px 5px black;
   color: #fff;
 }
 

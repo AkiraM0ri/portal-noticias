@@ -14,8 +14,30 @@ header .menu-hamburger {
 }
 
 @media (max-width: 600px) {
+  header .container {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
   header .menu {
     display: none;
+    top: 6rem;
+    height: 100vh;
+    background-color: var(--menu-mobile-bg);
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    left: 0;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    transition: 300ms;
+    transform: translateX(-100%);
+    min-width: 40%;
+  }
+
+  header .menu.menu-active {
+    transform: translateX(0%);
   }
 
   header .menu-hamburger {

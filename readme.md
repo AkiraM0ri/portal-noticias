@@ -64,12 +64,15 @@ Rendeniza a página home.
 
 ## Proximas atualizações
 
-- menu mobile
+- Adicionar newsletter
 
-- Adicionar tela de perfil do user design
+- Adicionar pagina da noticia
 
-- Feed e cadastro de noticias  
+- infos do rodapé
 
+- foto personalizada de cada usuario
+
+- logo
 
 ## Autores
 

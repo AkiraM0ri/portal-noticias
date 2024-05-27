@@ -1,0 +1,77 @@
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  padding: 0 2rem;
+}
+
+.profile-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  width: 90%;
+  max-width: 40rem;
+  padding: 2rem;
+}
+
+.profile-image {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  margin: 0 auto 2rem;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-image input {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-info {
+  margin-top: 2rem;
+}
+
+.profile-info h1 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.edit-profile-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.post-news {
+  background-color: #008b25;
+}
+
+.edit-profile-link:hover {
+  background-color: #0056b3;
+}
+
+.post-news:hover {
+  background-color: #01631b;
+}

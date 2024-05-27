@@ -11,10 +11,12 @@ function animeScroll() {
     r.style.setProperty('--menu-item-color', '#ffffff');
     r.style.setProperty('--user-icon-color', '#ffffff');
     r.style.setProperty('--menu-hamburger-bg-color', '#ffffff');
+    r.style.setProperty('--menu-mobile-bg', '#23232e');
   } else {
     r.style.setProperty('--menu-item-color', '#232323');
     r.style.setProperty('--user-icon-color', '#232323');
     r.style.setProperty('--menu-hamburger-bg-color', '#232323');
+    r.style.setProperty('--menu-mobile-bg', '#ffffff');
   }
 
   const intervalsPassed = Math.floor(windowTop / 1000);
@@ -27,41 +29,21 @@ window.addEventListener('scroll', ()=>{
   animeScroll();
 })
 
-function createNews() {
-  const numberOfNews = 62
-  const container = document.querySelector('.infinite-wrapper')
+function menuMobile() {
+  const hamburguerBtn = document.querySelector('.menu-hamburger')
 
-  if(!container) {
-    setTimeout(createNews, 1000)
-    return
-  }
-
-  for(let i = 0; i < numberOfNews; i++) {
-    container.innerHTML += `
-    <div class="card-infinite">
-      <div class="card-infinite__img-container">
-        <img src="./assets/imgs/infinite-scroll.jpg" alt="">
-      </div>
-      <div class="card-infinite__infos-container">
-        <div class="infos-container__title">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id mollitia saepe corrupti perspiciatis et architecto quod adipisci quidem sunt quia. Ratione pariatur nemo molestias harum reprehenderit. Pariatur odio reiciendis deleniti.</p>
-        </div>
-        <div class="infos-container__author">
-          <div class="card-news__author-img-container">
-            <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-          </div>
-          <div class="card-news__author-name-container">
-            <p class="card-news__author-name">César Tralli</p>
-            <p class="card-news__author-date">28/04/2023</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    `
-  }
-
-  const loader = document.querySelector('.loader')
-  loader.style.display = 'none'
+  hamburguerBtn.addEventListener('click', () => {
+    const menu = document.querySelector('.menu')
+    menu.classList.toggle('menu-active')
+  });
 }
 
-createNews()
+menuMobile()
+
+function changeMainBG() {
+  const mainBG = document.querySelector('main')
+  const bg = mainBG.getAttribute('bg')
+  mainBG.style.backgroundImage = `url("${bg}")`
+}
+
+changeMainBG()

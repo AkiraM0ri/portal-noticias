@@ -1,9 +1,11 @@
 const User = require("../models/User.js")
 
+// pagina de cadastro
 exports.registerUser = async (req, res) => {
   res.render('register');
 }
 
+// pagina de login
 exports.loginUser = async (req, res) => {
   res.render('login');
 }
@@ -16,9 +18,12 @@ exports.profileData = async (req, res) => {
   const verifyUserExists = await userExists({_id: userId }, '-password -email -_id -__v')
   if(!verifyUserExists.exists) return res.status(404).json({ erro: "usuario nao encontrado" })
 
-  const userData = verifyUserExists.data 
-  
-  res.status(200).json(userData)
+  const userData = {
+    user: verifyUserExists.data.user,
+    isAuthenticated: true
+  }
+
+  res.render('profile', userData)
 }
 
 // encerra a sessao de um usuario

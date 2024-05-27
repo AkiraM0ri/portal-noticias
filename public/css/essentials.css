@@ -11,6 +11,7 @@
   --footer-title-color: #ffffff;
   --autor-font-color: #999999;
   --menu-hamburger-bg-color: #232323;
+  --menu-mobile-bg: #fff;
 }
 
 html {
@@ -70,14 +71,15 @@ header{
 }
 
 header .container {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .menu {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .menu .menu__item {
@@ -109,6 +111,7 @@ header .container {
 header .container .user {
   display: flex;
   gap: 1rem;
+  justify-content: flex-end;
 }
 
 header .container .user > .user__btn {

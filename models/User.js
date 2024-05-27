@@ -12,6 +12,9 @@ const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true
+  },
+  reporter: {
+    type: Boolean,
   }
 })
 

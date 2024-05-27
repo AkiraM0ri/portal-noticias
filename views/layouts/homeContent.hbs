@@ -1,13 +1,11 @@
-<main>
+<main bg="{{type1.imageLink}}">
   <div class="container">
     <div class="main-content__box">
       <div class="main-content__tags news-tags">
         <span>Novo</span>
       </div>
       <div class="main-content__title">
-        <span>Lorem ipsum dolor,</span>
-        <span>sit amet consectetur adipisicing elit.</span> 
-        <span>Perspiciatis aut delectus</span>
+        <span>{{type1.title}}</span>
       </div>
     </div>
   </div>
@@ -15,65 +13,27 @@
 
 <section class="main-news">
   <div class="container">
+    {{#each type2}}
     <div class="main-news__card-container">
       <div class="secondary-news__card-container">
         <div class="card-container__infos">
           <div class="card-container__infos-title">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem aut quisquam sit magni ab sapiente sequi? Rerum esse possimus beatae, dicta non officiis est, quis, aliquid enim magni at!</p>
+            <p>{{this.title}}</p>
           </div>
           <div class="card__infos__author">
             <div class="card-news__author-img-container">
               <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
             </div>
             <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
+              <p class="card-news__author-name">{{this.journalistsName}}</p>
+              <p class="card-news__author-date">{{formatDate this.date "dd/MM/yyyy"}}</p>
             </div>
           </div>
         </div>
-        <img src="./assets/imgs/img-1.jpg" alt="">
+        <img src="{{this.imageLink}}" alt="">
       </div>
     </div>
-
-    <div class="main-news__card-container">
-      <div class="secondary-news__card-container">
-        <div class="card-container__infos">
-          <div class="card-container__infos-title">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem aut quisquam sit magni ab sapiente sequi? Rerum esse possimus beatae, dicta non officiis est, quis, aliquid enim magni at!</p>
-          </div>
-          <div class="card__infos__author">
-            <div class="card-news__author-img-container">
-              <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-            </div>
-            <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
-            </div>
-          </div>
-        </div>
-        <img src="./assets/imgs/img-1.jpg" alt="">
-      </div>
-    </div>
-
-    <div class="main-news__card-container">
-      <div class="secondary-news__card-container">
-        <div class="card-container__infos">
-          <div class="card-container__infos-title">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem aut quisquam sit magni ab sapiente sequi? Rerum esse possimus beatae, dicta non officiis est, quis, aliquid enim magni at!</p>
-          </div>
-          <div class="card__infos__author">
-            <div class="card-news__author-img-container">
-              <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-            </div>
-            <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
-            </div>
-          </div>
-        </div>
-        <img src="./assets/imgs/img-1.jpg" alt="">
-      </div>
-    </div>
+    {{/each}}
   </div>
 </section>
 
@@ -83,119 +43,26 @@
 
     <div class="weekly-news__cards-wrapper">
 
+      {{#each type3}}
       <div class="card-container">
         <div class="card__img">
-          <img src="./assets/imgs/noticias-semanais.jpg" alt="">
+          <img src="{{this.imageLink}}" alt="">
         </div>
         <div class="card__infos">
           <div class="news-tags"><span>novo</span></div>
-          <p class="card-news__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nihil totam laboriosam sapiente quaerat blanditiis mollitia, doloribus fugit vitae eum consequuntur. Dolorem id eaque voluptates voluptatum aperiam deserunt expedita sit.</p>
+          <p class="card-news__name">{{this.title}}</p>
           <div class="card__infos__author">
             <div class="card-news__author-img-container">
               <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
             </div>
             <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
+              <p class="card-news__author-name">{{this.journalistsName}}</p>
+              <p class="card-news__author-date">{{formatDate this.date "dd/MM/yyyy"}}</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="card-container">
-        <div class="card__img">
-          <img src="./assets/imgs/noticias-semanais.jpg" alt="">
-        </div>
-        <div class="card__infos">
-          <div class="news-tags"><span>novo</span></div>
-          <p class="card-news__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nihil totam laboriosam sapiente quaerat blanditiis mollitia, doloribus fugit vitae eum consequuntur. Dolorem id eaque voluptates voluptatum aperiam deserunt expedita sit.</p>
-          <div class="card__infos__author">
-            <div class="card-news__author-img-container">
-              <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-            </div>
-            <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container">
-        <div class="card__img">
-          <img src="./assets/imgs/noticias-semanais.jpg" alt="">
-        </div>
-        <div class="card__infos">
-          <div class="news-tags"><span>novo</span></div>
-          <p class="card-news__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nihil totam laboriosam sapiente quaerat blanditiis mollitia, doloribus fugit vitae eum consequuntur. Dolorem id eaque voluptates voluptatum aperiam deserunt expedita sit.</p>
-          <div class="card__infos__author">
-            <div class="card-news__author-img-container">
-              <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-            </div>
-            <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container">
-        <div class="card__img">
-          <img src="./assets/imgs/noticias-semanais.jpg" alt="">
-        </div>
-        <div class="card__infos">
-          <div class="news-tags"><span>novo</span></div>
-          <p class="card-news__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nihil totam laboriosam sapiente quaerat blanditiis mollitia, doloribus fugit vitae eum consequuntur. Dolorem id eaque voluptates voluptatum aperiam deserunt expedita sit.</p>
-          <div class="card__infos__author">
-            <div class="card-news__author-img-container">
-              <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-            </div>
-            <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container">
-        <div class="card__img">
-          <img src="./assets/imgs/noticias-semanais.jpg" alt="">
-        </div>
-        <div class="card__infos">
-          <div class="news-tags"><span>novo</span></div>
-          <p class="card-news__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nihil totam laboriosam sapiente quaerat blanditiis mollitia, doloribus fugit vitae eum consequuntur. Dolorem id eaque voluptates voluptatum aperiam deserunt expedita sit.</p>
-          <div class="card__infos__author">
-            <div class="card-news__author-img-container">
-              <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-            </div>
-            <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-container">
-        <div class="card__img">
-          <img src="./assets/imgs/noticias-semanais.jpg" alt="">
-        </div>
-        <div class="card__infos">
-          <div class="news-tags"><span>novo</span></div>
-          <p class="card-news__name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nihil totam laboriosam sapiente quaerat blanditiis mollitia, doloribus fugit vitae eum consequuntur. Dolorem id eaque voluptates voluptatum aperiam deserunt expedita sit.</p>
-          <div class="card__infos__author">
-            <div class="card-news__author-img-container">
-              <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-            </div>
-            <div class="card-news__author-name-container">
-              <p class="card-news__author-name">César Tralli</p>
-              <p class="card-news__author-date">28/04/2023</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/each}}
 
     </div>
   </div>
@@ -204,70 +71,56 @@
 <section class="you-may-know">
   <h2>Talvez você se interesse</h2>
   <div class="container">
+    {{#each type4}}
     <div class="secondary-news__card-container">
       <div class="card-container__infos">
         <div class="card-container__infos-title">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem aut quisquam sit magni ab sapiente sequi? Rerum esse possimus beatae, dicta non officiis est, quis, aliquid enim magni at!</p>
+          <p>{{this.title}}</p>
         </div>
         <div class="card__infos__author">
           <div class="card-news__author-img-container">
             <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
           </div>
           <div class="card-news__author-name-container">
-            <p class="card-news__author-name">César Tralli</p>
-            <p class="card-news__author-date">28/04/2023</p>
+            <p class="card-news__author-name">{{this.journalistsName}}</p>
+            <p class="card-news__author-date">{{formatDate this.date "dd/MM/yyyy"}}</p>
           </div>
         </div>
       </div>
-      <img src="./assets/imgs/img-1.jpg" alt="">
+      <img src="{{this.imageLink}}" alt="">
     </div>
-
-    <div class="secondary-news__card-container">
-      <div class="card-container__infos">
-        <div class="card-container__infos-title">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem aut quisquam sit magni ab sapiente sequi? Rerum esse possimus beatae, dicta non officiis est, quis, aliquid enim magni at!</p>
-        </div>
-        <div class="card__infos__author">
-          <div class="card-news__author-img-container">
-            <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
-          </div>
-          <div class="card-news__author-name-container">
-            <p class="card-news__author-name">César Tralli</p>
-            <p class="card-news__author-date">28/04/2023</p>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/imgs/img-1.jpg" alt="">
-    </div>
-
-    <div class="secondary-news__card-container">
-      <div class="card-container__infos">
-        <div class="card-container__infos-title">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium voluptatem aut quisquam sit magni ab sapiente sequi? Rerum esse possimus beatae, dicta non officiis est, quis, aliquid enim magni at!</p>
-        </div>
-        <div class="card__infos__author">
-          <div class="card-news__author-img-container">
-            <img class="card-news__author-img" src="./assets/./assets/imgs/trali.jpeg" alt="imagem do autor">
-          </div>
-          <div class="card-news__author-name-container">
-            <p class="card-news__author-name">César Tralli</p>
-            <p class="card-news__author-date">28/04/2023</p>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/imgs/img-1.jpg" alt="">
-    </div>
-
+    {{/each}}
 
   </div>
-</section>
+</section>  
 
 <section class="infinite-scroll">
   <div class="container">
     <h2>Publicado recentemente</h2>
 
     <div class="infinite-wrapper">
-      <span class="loader"></span>
+      {{#each all}}
+      <div class="card-infinite">
+      <div class="card-infinite__img-container">
+        <img src="{{this.imageLink}}" alt="">
+      </div>
+      <div class="card-infinite__infos-container">
+        <div class="infos-container__title">
+          <p>{{this.title}}</p>
+        </div>
+        <div class="infos-container__author">
+          <div class="card-news__author-img-container">
+            <img class="card-news__author-img" src="./assets/imgs/trali.jpeg" alt="imagem do autor">
+          </div>
+          <div class="card-news__author-name-container">
+            <p class="card-news__author-name">{{this.journalistsName}}</p>
+            <p class="card-news__author-date">{{formatDate this.date "dd/MM/yyyy"}}</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      {{/each}}
     </div>
+    
   </div>
 </section>
