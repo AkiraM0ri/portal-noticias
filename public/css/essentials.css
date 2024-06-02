@@ -107,6 +107,16 @@ header .container {
 .menu .menu__item:hover {
   background-size: 0 3px, 100% 3px;
 }
+header .logo-container {
+  max-width: 4rem;
+  width: 100%;
+  display: flex;
+}
+
+header .logo-container img {
+  width: 100%;
+  height: auto;
+}
 
 header .container .user {
   display: flex;
