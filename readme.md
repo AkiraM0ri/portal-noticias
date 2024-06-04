@@ -43,6 +43,12 @@ Instale as dependências
   npm install
 ```
 
+Crie um .env na raiz do projeto com os dados do banco
+
+```bash
+  DB_USER, DB_PASS e SECRET = "BARTOLOMEU"
+```
+
 Inicie o servidor
 
 ```bash
